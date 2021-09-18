@@ -2,10 +2,7 @@
 
 use anyhow::Result;
 use clap::Clap;
-use crossterm::{
-    event::{read, Event, KeyCode, KeyModifiers},
-    terminal::enable_raw_mode,
-};
+use crossterm::{event::{read, Event, KeyCode, KeyModifiers}, terminal::{disable_raw_mode, enable_raw_mode}};
 use serial::{open, BaudRate, SerialPort};
 use std::io::{Read, Write};
 
@@ -50,6 +47,7 @@ fn process_stdin() -> Result<()> {
             if e.modifiers.contains(KeyModifiers::CONTROL)
                 && (e.code == KeyCode::Char('c') || e.code == KeyCode::Char('d'))
             {
+                disable_raw_mode().expect("Failed to disable raw mode");
                 std::process::exit(0);
             }
         }
