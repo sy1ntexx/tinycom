@@ -1,0 +1,11 @@
+[package]
+name = "tinycom"
+version = "0.1.0"
+edition = "2021"
+authors = ["sy1ntexx"]
+description = "Tiny COM/Serial interaction program"
+
+[dependencies]
+serial = "0.4.0"
+signal = "0.7.0"
+clap = "3.0.0-beta.4"
