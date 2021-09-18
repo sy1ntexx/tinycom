@@ -7,5 +7,6 @@ description = "Tiny COM/Serial interaction program"
 
 [dependencies]
 serial = "0.4.0"
-signal = "0.7.0"
+anyhow = "1.0.44"
+crossterm = "0.21.0"
 clap = "3.0.0-beta.4"
